@@ -129,7 +129,7 @@ export default {
         },
         {
           name: 'PRO',
-          price: '50,000',
+          price: '2,000',
           period: 'Oyiga',
           color: 'blue',
           features: [
@@ -143,7 +143,7 @@ export default {
         },
         {
           name: 'ADVANCED',
-          price: '120,000',
+          price: '20,000',
           period: 'Oyiga',
           color: 'purple',
           features: [

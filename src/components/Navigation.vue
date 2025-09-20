@@ -22,6 +22,13 @@
             Xususiyatlar
           </router-link>
           <router-link 
+            to="/advice" 
+            class="hover:text-primary transition-colors"
+            :class="{ 'text-primary': $route.path === '/advice' }"
+          >
+            Maslahatlar
+          </router-link>
+          <router-link 
             to="/pricing" 
             class="hover:text-primary transition-colors"
             :class="{ 'text-primary': $route.path === '/pricing' }"
@@ -68,6 +75,13 @@
           class="block hover:text-primary transition-colors"
         >
           Xususiyatlar
+        </router-link>
+        <router-link 
+          to="/advice" 
+          @click="toggleMobileMenu" 
+          class="block hover:text-primary transition-colors"
+        >
+          Maslahatlar
         </router-link>
         <router-link 
           to="/pricing" 

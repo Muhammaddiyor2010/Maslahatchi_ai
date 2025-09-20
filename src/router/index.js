@@ -4,6 +4,7 @@ import Features from '../views/Features.vue'
 import Pricing from '../views/Pricing.vue'
 import Contact from '../views/Contact.vue'
 import About from '../views/About.vue'
+import Advice from '../views/Advice.vue'
 
 const routes = [
   {
@@ -15,6 +16,11 @@ const routes = [
     path: '/features',
     name: 'Features',
     component: Features
+  },
+  {
+    path: '/advice',
+    name: 'Advice',
+    component: Advice
   },
   {
     path: '/pricing',
