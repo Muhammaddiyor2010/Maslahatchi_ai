@@ -1,17 +1,34 @@
 <template>
-  <div class="not-found">
-    <div class="container">
-      <div class="error-content">
-        <h1>404</h1>
-        <h2>Page Not Found</h2>
-        <p>The page you're looking for doesn't exist.</p>
-        <div class="button-group">
-          <router-link to="/" class="button">
-            Go Home
+  <div class="pt-24 pb-16 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="glass rounded-2xl p-12">
+        <div class="mb-8">
+          <i class="fas fa-exclamation-triangle text-8xl text-red-400 mb-6"></i>
+          <h1 class="text-8xl font-bold text-red-400 mb-4">404</h1>
+          <h2 class="text-3xl font-bold mb-4">Sahifa Topilmadi</h2>
+          <p class="text-xl text-gray-300 mb-8">
+            Qidirilayotgan sahifa mavjud emas yoki o'chirilgan.
+          </p>
+        </div>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <router-link to="/" 
+                       class="bg-gradient-to-r from-primary to-secondary px-8 py-4 rounded-lg text-lg font-semibold hover:scale-105 transition-transform">
+            <i class="fas fa-home mr-2"></i>Bosh Sahifaga Qaytish
           </router-link>
-          <button @click="goBack" class="button button-secondary">
-            Go Back
+          <button @click="goBack" 
+                  class="border-2 border-primary px-8 py-4 rounded-lg text-lg font-semibold hover:bg-primary/10 transition-colors">
+            <i class="fas fa-arrow-left mr-2"></i>Orqaga Qaytish
           </button>
+        </div>
+        
+        <div class="mt-8 text-gray-400">
+          <p>Yoki quyidagi sahifalardan birini tanlang:</p>
+          <div class="flex flex-wrap justify-center gap-4 mt-4">
+            <router-link to="/features" class="hover:text-primary transition-colors">Xususiyatlar</router-link>
+            <router-link to="/pricing" class="hover:text-primary transition-colors">Narxlar</router-link>
+            <router-link to="/contact" class="hover:text-primary transition-colors">Aloqa</router-link>
+          </div>
         </div>
       </div>
     </div>
@@ -30,50 +47,11 @@ export default {
 </script>
 
 <style scoped>
-.not-found {
-  padding: 4rem 0;
-  text-align: center;
+.text-primary {
+  color: #6366f1;
 }
 
-.error-content h1 {
-  font-size: 8rem;
-  font-weight: bold;
-  color: #ef4444;
-  margin: 0;
-  line-height: 1;
-}
-
-.error-content h2 {
-  font-size: 2rem;
-  color: #374151;
-  margin: 1rem 0;
-}
-
-.error-content p {
-  font-size: 1.2rem;
-  color: #6b7280;
-  margin-bottom: 2rem;
-}
-
-.button-group {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-@media (max-width: 768px) {
-  .error-content h1 {
-    font-size: 6rem;
-  }
-  
-  .error-content h2 {
-    font-size: 1.5rem;
-  }
-  
-  .button-group {
-    flex-direction: column;
-    align-items: center;
-  }
+.text-secondary {
+  color: #8b5cf6;
 }
 </style>

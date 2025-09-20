@@ -225,15 +225,22 @@ export default {
       localStorage.setItem('usageData', JSON.stringify(data));
     },
     startChat() {
+      console.log('startChat called!');
+      console.log('currentPlan:', this.currentPlan);
+      console.log('isAuthenticated:', this.isAuthenticated);
+      
       if (this.currentPlan === 'free') {
+        console.log('Starting FREE chat...');
         // Bot xabarini to'g'ridan-to'g'ri qo'shamiz, recursive chaqiruv emas
         this.messages.push({ 
           text: "Salom! Maslahatchi AI ga xush kelibsiz. Sizga qanday yordam bera olaman?", 
           sender: 'bot', 
           timestamp: new Date() 
         });
+        console.log('FREE chat message added to messages array');
       } else if (this.currentPlan === 'pro' || this.currentPlan === 'advanced') {
         if (this.isAuthenticated) {
+          console.log('Starting authenticated chat...');
           // Agar allaqachon authenticated bo'lsa, to'g'ridan-to'g'ri chat boshlash
           this.messages.push({ 
             text: "Salom! Maslahatchi AI ga xush kelibsiz. Sizga qanday yordam bera olaman?", 
@@ -241,6 +248,7 @@ export default {
             timestamp: new Date() 
           });
         } else {
+          console.log('Opening token modal...');
           // Agar authenticated bo'lmasa, token modal ochish
           this.showTokenModal = true;
         }
@@ -353,11 +361,14 @@ export default {
       this.saveUsageData();
     },
     selectPlan(plan) {
+      console.log('selectPlan called with plan:', plan);
+      console.log('Current state - currentPlan:', this.currentPlan, 'isAuthenticated:', this.isAuthenticated);
+      
       if (plan === 'free') {
         // FREE rejimni to'g'ridan-to'g'ri tanlash mumkin
         this.currentPlan = 'free';
         this.isAuthenticated = false;
-        console.log('FREE rejim tanlandi');
+        console.log('FREE rejim tanlandi - currentPlan set to free');
       } else if (plan === 'pro' || plan === 'advanced') {
         if (this.isAuthenticated && this.currentPlan === plan) {
           // Agar allaqachon authenticated bo'lsa, hech narsa qilmaymiz
@@ -366,7 +377,7 @@ export default {
           // Tanlangan planni saqlash va token modal ochish
           this.selectedPlan = plan;
           this.showTokenModal = true;
-          console.log(`${plan.toUpperCase()} rejim uchun token modal ochildi`);
+          console.log(`${plan.toUpperCase()} rejim uchun token modal ochildi - selectedPlan:`, this.selectedPlan);
         }
       }
     },
