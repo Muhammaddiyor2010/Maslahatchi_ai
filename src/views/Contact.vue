@@ -4,7 +4,8 @@
       <div class="text-center mb-16">
         <h1 class="text-4xl md:text-6xl font-bold mb-6 gradient-text">Aloqa</h1>
         <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-          Bizga murojaat qiling va professional yordam oling
+          Bizga murojaat qiling va professional AI maslahatlardan foydalaning. 
+          Har qanday savol yoki taklif uchun biz bilan bog'laning.
         </p>
       </div>
 
@@ -29,11 +30,24 @@
           <!-- Map -->
           <div class="glass rounded-lg p-6 mt-8">
             <h3 class="font-semibold mb-4">Bizning joylashuvimiz</h3>
-            <div class="bg-gray-800 rounded-lg h-48 flex items-center justify-center">
-              <div class="text-center">
-                <i class="fas fa-map text-4xl text-primary mb-2"></i>
-                <p class="text-gray-300">Xarita bu yerda bo'ladi</p>
-              </div>
+            <div class="bg-gray-800 rounded-lg overflow-hidden h-64">
+              <iframe 
+                src="https://yandex.uz/maps/geo/1939283421/?ll=71.005388%2C40.518417&utm_campaign=desktop&utm_medium=search&utm_source=maps&z=17.92"
+                width="100%" 
+                height="100%" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+            </div>
+            <div class="mt-4 text-center">
+              <a href="https://yandex.uz/maps/geo/1939283421/?ll=71.005388%2C40.518417&utm_campaign=desktop&utm_medium=search&utm_source=maps&z=17.92" 
+                 target="_blank"
+                 class="inline-flex items-center text-primary hover:underline">
+                <i class="fas fa-external-link-alt mr-2"></i>
+                Yandex Xaritada Ko'rish
+              </a>
             </div>
           </div>
         </div>
@@ -76,6 +90,68 @@
         </div>
       </div>
 
+      <!-- Additional Information -->
+      <div class="mt-16">
+        <h2 class="text-3xl font-bold text-center mb-12">Qo'shimcha Ma'lumotlar</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Working Hours -->
+          <div class="glass rounded-2xl p-6 text-center">
+            <i class="fas fa-clock text-4xl text-primary mb-4"></i>
+            <h3 class="text-xl font-bold mb-3">Ish Vaqtlari</h3>
+            <div class="space-y-2 text-gray-300">
+              <p><strong>Dushanba - Juma:</strong> 9:00 - 18:00</p>
+              <p><strong>Shanba:</strong> 10:00 - 16:00</p>
+              <p><strong>Yakshanba:</strong> Dam olish</p>
+            </div>
+          </div>
+
+          <!-- Response Time -->
+          <div class="glass rounded-2xl p-6 text-center">
+            <i class="fas fa-reply text-4xl text-green-400 mb-4"></i>
+            <h3 class="text-xl font-bold mb-3">Javob Vaqti</h3>
+            <div class="space-y-2 text-gray-300">
+              <p><strong>Email:</strong> 24 soat ichida</p>
+              <p><strong>Telegram:</strong> 2 soat ichida</p>
+              <p><strong>Telefon:</strong> Darhol</p>
+            </div>
+          </div>
+
+          <!-- Languages -->
+          <div class="glass rounded-2xl p-6 text-center">
+            <i class="fas fa-language text-4xl text-blue-400 mb-4"></i>
+            <h3 class="text-xl font-bold mb-3">Tillar</h3>
+            <div class="space-y-2 text-gray-300">
+              <p><strong>O'zbek:</strong> Asosiy</p>
+              <p><strong>Rus:</strong> Qo'llab-quvvatlanadi</p>
+              <p><strong>Ingliz:</strong> Qo'llab-quvvatlanadi</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ Section -->
+      <div class="mt-16">
+        <h2 class="text-3xl font-bold text-center mb-12">Tez-tez So'raladigan Savollar</h2>
+        <div class="max-w-4xl mx-auto space-y-6">
+          <div class="glass rounded-lg p-6">
+            <h3 class="font-semibold mb-2 text-primary">Qanday qilib siz bilan bog'lanish mumkin?</h3>
+            <p class="text-gray-300">Biz bilan email, telefon yoki Telegram orqali bog'lanishingiz mumkin. Barcha usullar 24/7 mavjud.</p>
+          </div>
+          <div class="glass rounded-lg p-6">
+            <h3 class="font-semibold mb-2 text-primary">Javob qachon keladi?</h3>
+            <p class="text-gray-300">Email orqali 24 soat ichida, Telegram orqali 2 soat ichida, telefon orqali esa darhol javob beramiz.</p>
+          </div>
+          <div class="glass rounded-lg p-6">
+            <h3 class="font-semibold mb-2 text-primary">Qanday tillarda yozish mumkin?</h3>
+            <p class="text-gray-300">Siz o'zbek, rus yoki ingliz tillarida yozishingiz mumkin. Biz barcha tillarda professional javob beramiz.</p>
+          </div>
+          <div class="glass rounded-lg p-6">
+            <h3 class="font-semibold mb-2 text-primary">Ofisimizga kelish mumkinmi?</h3>
+            <p class="text-gray-300">Ha, albatta! Bizning ofisimiz Qo'qon shahrida joylashgan. Kelishdan oldin telefon qilib ma'lum qilish tavsiya etiladi.</p>
+          </div>
+        </div>
+      </div>
+
       <!-- Success Message -->
       <div v-if="submitted" class="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
         <div class="glass rounded-2xl p-8 max-w-md w-full mx-4 text-center">
@@ -113,22 +189,22 @@ export default {
         {
           icon: 'fas fa-envelope',
           title: 'Email',
-          value: 'info@maslahatchi.ai',
-          link: 'mailto:info@maslahatchi.ai',
+          value: 'Muhammaddiyorjon2010@icloud.com',
+          link: 'mailto:Muhammaddiyorjon2010@icloud.com',
           color: 'text-red-400'
         },
         {
           icon: 'fas fa-phone',
           title: 'Telefon',
-          value: '+998 90 123 45 67',
-          link: 'tel:+998901234567',
+          value: '+998 93 198 17 93',
+          link: 'tel:+998931981793',
           color: 'text-green-400'
         },
         {
           icon: 'fas fa-map-marker-alt',
           title: 'Manzil',
-          value: 'Toshkent, O\'zbekiston',
-          link: '#',
+          value: 'Qo\'qon, O\'zbekiston',
+          link: 'https://yandex.uz/maps/geo/1939283421/?ll=71.005388%2C40.518417&utm_campaign=desktop&utm_medium=search&utm_source=maps&z=17.92',
           color: 'text-yellow-400'
         }
       ]
