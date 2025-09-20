@@ -29,6 +29,13 @@
             Narxlar
           </router-link>
           <router-link 
+            to="/about" 
+            class="hover:text-primary transition-colors"
+            :class="{ 'text-primary': $route.path === '/about' }"
+          >
+            Biz haqimizda
+          </router-link>
+          <router-link 
             to="/contact" 
             class="hover:text-primary transition-colors"
             :class="{ 'text-primary': $route.path === '/contact' }"
@@ -68,6 +75,13 @@
           class="block hover:text-primary transition-colors"
         >
           Narxlar
+        </router-link>
+        <router-link 
+          to="/about" 
+          @click="toggleMobileMenu" 
+          class="block hover:text-primary transition-colors"
+        >
+          Biz haqimizda
         </router-link>
         <router-link 
           to="/contact" 

@@ -99,7 +99,7 @@
 
         <!-- Chat Interface -->
         <div class="max-w-4xl mx-auto">
-          <div class="glass rounded-2xl overflow-hidden">
+          <div ref="chatContainer" class="glass rounded-2xl overflow-hidden">
             <div class="bg-gradient-to-r from-primary to-secondary p-4">
               <div class="flex justify-between items-center">
                 <h3 class="text-lg font-semibold">AI Maslahatchi Chat</h3>
@@ -132,7 +132,7 @@
             </div>
             <div class="p-4 border-t border-white/10">
               <div class="flex gap-2">
-                <input v-model="currentMessage" @keyup.enter="sendMessage(currentMessage)" 
+                <input ref="chatInput" v-model="currentMessage" @keyup.enter="sendMessage(currentMessage)" 
                        placeholder="Savolingizni yozing..." 
                        :disabled="!canSendMessage"
                        class="flex-1 bg-gray-800 dark:bg-gray-800 light:bg-white border border-gray-600 dark:border-gray-600 light:border-gray-300 rounded-lg px-4 py-2 text-white dark:text-white light:text-gray-900 disabled:opacity-50 disabled:cursor-not-allowed">
@@ -238,6 +238,12 @@ export default {
           timestamp: new Date() 
         });
         console.log('FREE chat message added to messages array');
+        
+        // Chat qismiga scroll qilish
+        this.$nextTick(() => {
+          this.scrollToChat();
+        });
+        
       } else if (this.currentPlan === 'pro' || this.currentPlan === 'advanced') {
         if (this.isAuthenticated) {
           console.log('Starting authenticated chat...');
@@ -247,6 +253,12 @@ export default {
             sender: 'bot', 
             timestamp: new Date() 
           });
+          
+          // Chat qismiga scroll qilish
+          this.$nextTick(() => {
+            this.scrollToChat();
+          });
+          
         } else {
           console.log('Opening token modal...');
           // Agar authenticated bo'lmasa, token modal ochish
@@ -379,6 +391,27 @@ export default {
           this.showTokenModal = true;
           console.log(`${plan.toUpperCase()} rejim uchun token modal ochildi - selectedPlan:`, this.selectedPlan);
         }
+      }
+    },
+    scrollToChat() {
+      console.log('Scrolling to chat...');
+      if (this.$refs.chatContainer) {
+        this.$refs.chatContainer.scrollIntoView({ 
+          behavior: 'smooth',
+          block: 'start'
+        });
+        console.log('Scrolled to chat container');
+        
+        // Chat input ga focus qilish
+        setTimeout(() => {
+          if (this.$refs.chatInput) {
+            this.$refs.chatInput.focus();
+            console.log('Chat input focused');
+          }
+        }, 500); // Scroll tugagandan keyin focus qilish
+        
+      } else {
+        console.log('Chat container ref not found');
       }
     },
     contactTelegram() {
