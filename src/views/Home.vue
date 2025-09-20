@@ -18,9 +18,9 @@
             Professional AI maslahatchi - sizning shaxsiy yordamchingiz barcha masalalarda
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <button @click="startChat" class="bg-gradient-to-r from-primary to-secondary px-8 py-4 rounded-full text-lg font-semibold hover:scale-105 transition-transform animate-glow">
+            <router-link to="/advice" class="bg-gradient-to-r from-primary to-secondary px-8 py-4 rounded-full text-lg font-semibold hover:scale-105 transition-transform animate-glow">
               <i class="fas fa-play mr-2"></i>Bepul Boshlash
-            </button>
+            </router-link>
             <router-link to="/pricing" class="border-2 border-primary px-8 py-4 rounded-full text-lg font-semibold hover:bg-primary/10 transition-colors">
               Narxlarni Ko'rish
             </router-link>
@@ -228,48 +228,6 @@ export default {
         usage: this.dailyUsage
       };
       localStorage.setItem('usageData', JSON.stringify(data));
-    },
-    startChat() {
-      console.log('startChat called!');
-      console.log('currentPlan:', this.currentPlan);
-      console.log('isAuthenticated:', this.isAuthenticated);
-      
-      if (this.currentPlan === 'free') {
-        console.log('FREE plan - AI not available');
-        // Bepul versiyada AI ishlamaydi, faqat reklama xabari
-        this.messages.push({ 
-          text: "😔 Bepul versiyada AI maslahatchi mavjud emas. Professional maslahatlar uchun PRO yoki ADVANCED rejimni tanlang!", 
-          sender: 'bot', 
-          timestamp: new Date() 
-        });
-        console.log('FREE plan message added - AI disabled');
-        
-        // Chat qismiga scroll qilish
-        this.$nextTick(() => {
-          this.scrollToChat();
-        });
-        
-      } else if (this.currentPlan === 'pro' || this.currentPlan === 'advanced') {
-        if (this.isAuthenticated) {
-          console.log('Starting authenticated chat...');
-          // Agar allaqachon authenticated bo'lsa, to'g'ridan-to'g'ri chat boshlash
-          this.messages.push({ 
-            text: "Salom! Maslahatchi AI ga xush kelibsiz. Sizga qanday yordam bera olaman?", 
-            sender: 'bot', 
-            timestamp: new Date() 
-          });
-          
-          // Chat qismiga scroll qilish
-          this.$nextTick(() => {
-            this.scrollToChat();
-          });
-          
-        } else {
-          console.log('Opening token modal...');
-          // Agar authenticated bo'lmasa, token modal ochish
-          this.showTokenModal = true;
-        }
-      }
     },
     async sendMessage(text, sender = 'user') {
       if (sender === 'user') {

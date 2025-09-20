@@ -1,0 +1,26 @@
+{
+  "name": "Maslahatchi AI - Professional AI Consultant",
+  "short_name": "Maslahatchi AI",
+  "description": "Professional AI maslahatchi - sizning shaxsiy yordamchingiz barcha masalalarda",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1e1b4b",
+  "theme_color": "#6366f1",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/apple-touch-icon.svg",
+      "sizes": "180x180",
+      "type": "image/svg+xml"
+    }
+  ],
+  "categories": ["productivity", "education", "business"],
+  "lang": "uz",
+  "dir": "ltr"
+}
