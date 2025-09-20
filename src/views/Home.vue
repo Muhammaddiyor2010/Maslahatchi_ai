@@ -100,7 +100,7 @@
         <!-- Default Advice for Free Plan -->
         <div v-if="currentPlan === 'free'" class="max-w-4xl mx-auto mb-16">
           <h2 class="text-3xl font-bold text-center mb-8">Foydali Maslahatlar</h2>
-          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             <div class="glass rounded-2xl p-6 hover:scale-105 transition-transform">
               <div class="text-center mb-4">
                 <i class="fas fa-lightbulb text-4xl text-yellow-400 mb-3"></i>
@@ -176,6 +176,176 @@
                 <li><i class="fas fa-check text-green-400 mr-2"></i>Yangiliklarga ochiq bo'ling</li>
                 <li><i class="fas fa-check text-green-400 mr-2"></i>Xatolardan o'rganing</li>
                 <li><i class="fas fa-check text-green-400 mr-2"></i>Professional yordam so'rang</li>
+              </ul>
+            </div>
+
+            <!-- Yangi Maslahatlar -->
+            <div class="glass rounded-2xl p-6 hover:scale-105 transition-transform">
+              <div class="text-center mb-4">
+                <i class="fas fa-brain text-4xl text-indigo-400 mb-3"></i>
+                <h3 class="text-xl font-bold text-indigo-400">Psixologiya</h3>
+              </div>
+              <ul class="space-y-2 text-sm text-gray-300">
+                <li><i class="fas fa-check text-green-400 mr-2"></i>O'zingizni seving</li>
+                <li><i class="fas fa-check text-green-400 mr-2"></i>Ijobiy fikrlashni o'rganing</li>
+                <li><i class="fas fa-check text-green-400 mr-2"></i>Stress bilan kurashish usullarini</li>
+                <li><i class="fas fa-check text-green-400 mr-2"></i>Meditatsiya qiling</li>
+              </ul>
+            </div>
+
+            <div class="glass rounded-2xl p-6 hover:scale-105 transition-transform">
+              <div class="text-center mb-4">
+                <i class="fas fa-code text-4xl text-cyan-400 mb-3"></i>
+                <h3 class="text-xl font-bold text-cyan-400">Texnologiya</h3>
+              </div>
+              <ul class="space-y-2 text-sm text-gray-300">
+                <li><i class="fas fa-check text-green-400 mr-2"></i>Yangiliklarni kuzatib boring</li>
+                <li><i class="fas fa-check text-green-400 mr-2"></i>Dasturlash o'rganing</li>
+                <li><i class="fas fa-check text-green-400 mr-2"></i>Digital mahoratni rivojlantiring</li>
+                <li><i class="fas fa-check text-green-400 mr-2"></i>Sitronaviy xavfsizlikni</li>
+              </ul>
+            </div>
+
+            <div class="glass rounded-2xl p-6 hover:scale-105 transition-transform">
+              <div class="text-center mb-4">
+                <i class="fas fa-palette text-4xl text-pink-400 mb-3"></i>
+                <h3 class="text-xl font-bold text-pink-400">Ijodkorlik</h3>
+              </div>
+              <ul class="space-y-2 text-sm text-gray-300">
+                <li><i class="fas fa-check text-green-400 mr-2"></i>Ijodiy qobiliyatlarni rivojlantiring</li>
+                <li><i class="fas fa-check text-green-400 mr-2"></i>Rasm chizing yoki yozing</li>
+                <li><i class="fas fa-check text-green-400 mr-2"></i>Musiqa tinglang</li>
+                <li><i class="fas fa-check text-green-400 mr-2"></i>Badiiy asarlar o'qing</li>
+              </ul>
+            </div>
+
+            <div class="glass rounded-2xl p-6 hover:scale-105 transition-transform">
+              <div class="text-center mb-4">
+                <i class="fas fa-globe text-4xl text-teal-400 mb-3"></i>
+                <h3 class="text-xl font-bold text-teal-400">Til O'rganish</h3>
+              </div>
+              <ul class="space-y-2 text-sm text-gray-300">
+                <li><i class="fas fa-check text-green-400 mr-2"></i>Kunlik 30 daqiqa o'rganing</li>
+                <li><i class="fas fa-check text-green-400 mr-2"></i>Filmlar va seriallar tomosha qiling</li>
+                <li><i class="fas fa-check text-green-400 mr-2"></i>Nutqni mashq qiling</li>
+                <li><i class="fas fa-check text-green-400 mr-2"></i>Madaniyat haqida o'rganing</li>
+              </ul>
+            </div>
+
+            <div class="glass rounded-2xl p-6 hover:scale-105 transition-transform">
+              <div class="text-center mb-4">
+                <i class="fas fa-leaf text-4xl text-green-500 mb-3"></i>
+                <h3 class="text-xl font-bold text-green-500">Ekologiya</h3>
+              </div>
+              <ul class="space-y-2 text-sm text-gray-300">
+                <li><i class="fas fa-check text-green-400 mr-2"></i>Atrofmizni himoya qiling</li>
+                <li><i class="fas fa-check text-green-400 mr-2"></i>Qayta ishlatishni o'rganing</li>
+                <li><i class="fas fa-check text-green-400 mr-2"></i>Energiya tejang</li>
+                <li><i class="fas fa-check text-green-400 mr-2"></i>Tabiiy mahsulotlarni tanlang</li>
+              </ul>
+            </div>
+
+            <div class="glass rounded-2xl p-6 hover:scale-105 transition-transform">
+              <div class="text-center mb-4">
+                <i class="fas fa-book text-4xl text-orange-400 mb-3"></i>
+                <h3 class="text-xl font-bold text-orange-400">Kitob O'qish</h3>
+              </div>
+              <ul class="space-y-2 text-sm text-gray-300">
+                <li><i class="fas fa-check text-green-400 mr-2"></i>Kunlik 20 sahifa o'qing</li>
+                <li><i class="fas fa-check text-green-400 mr-2"></i>Turli janrlarni sinab ko'ring</li>
+                <li><i class="fas fa-check text-green-400 mr-2"></i>Notebook yarating</li>
+                <li><i class="fas fa-check text-green-400 mr-2"></i>Kitob klublariga qo'shiling</li>
+              </ul>
+            </div>
+
+            <div class="glass rounded-2xl p-6 hover:scale-105 transition-transform">
+              <div class="text-center mb-4">
+                <i class="fas fa-utensils text-4xl text-red-500 mb-3"></i>
+                <h3 class="text-xl font-bold text-red-500">Oshxona</h3>
+              </div>
+              <ul class="space-y-2 text-sm text-gray-300">
+                <li><i class="fas fa-check text-green-400 mr-2"></i>Yangi taomlar tayyorlang</li>
+                <li><i class="fas fa-check text-green-400 mr-2"></i>Mahalliy ingredientlardan foydalaning</li>
+                <li><i class="fas fa-check text-green-400 mr-2"></i>Ovqat tayyorlash san'atini</li>
+                <li><i class="fas fa-check text-green-400 mr-2"></i>Oilaviy retseptlarni saqlang</li>
+              </ul>
+            </div>
+
+            <div class="glass rounded-2xl p-6 hover:scale-105 transition-transform">
+              <div class="text-center mb-4">
+                <i class="fas fa-hiking text-4xl text-emerald-400 mb-3"></i>
+                <h3 class="text-xl font-bold text-emerald-400">Sayohat</h3>
+              </div>
+              <ul class="space-y-2 text-sm text-gray-300">
+                <li><i class="fas fa-check text-green-400 mr-2"></i>Yangi joylarni kashf qiling</li>
+                <li><i class="fas fa-check text-green-400 mr-2"></i>Mahalliy madaniyatni o'rganing</li>
+                <li><i class="fas fa-check text-green-400 mr-2"></i>Foto va video qiling</li>
+                <li><i class="fas fa-check text-green-400 mr-2"></i>Xotiralarni yozing</li>
+              </ul>
+            </div>
+
+            <div class="glass rounded-2xl p-6 hover:scale-105 transition-transform">
+              <div class="text-center mb-4">
+                <i class="fas fa-seedling text-4xl text-lime-400 mb-3"></i>
+                <h3 class="text-xl font-bold text-lime-400">Bog'dorchilik</h3>
+              </div>
+              <ul class="space-y-2 text-sm text-gray-300">
+                <li><i class="fas fa-check text-green-400 mr-2"></i>O'simliklar ekib o'rganing</li>
+                <li><i class="fas fa-check text-green-400 mr-2"></i>Tabiat bilan aloqada bo'ling</li>
+                <li><i class="fas fa-check text-green-400 mr-2"></i>O'z sabzavotingizni yetishtiring</li>
+                <li><i class="fas fa-check text-green-400 mr-2"></i>Ekologik hayot tarzini</li>
+              </ul>
+            </div>
+
+            <div class="glass rounded-2xl p-6 hover:scale-105 transition-transform">
+              <div class="text-center mb-4">
+                <i class="fas fa-dumbbell text-4xl text-red-600 mb-3"></i>
+                <h3 class="text-xl font-bold text-red-600">Sport</h3>
+              </div>
+              <ul class="space-y-2 text-sm text-gray-300">
+                <li><i class="fas fa-check text-green-400 mr-2"></i>Kunlik 30 daqiqa mashq qiling</li>
+                <li><i class="fas fa-check text-green-400 mr-2"></i>Turli sport turlarini sinab ko'ring</li>
+                <li><i class="fas fa-check text-green-400 mr-2"></i>Guruh mashqlariga qo'shiling</li>
+                <li><i class="fas fa-check text-green-400 mr-2"></i>Sport o'yinlarini tomosha qiling</li>
+              </ul>
+            </div>
+
+            <div class="glass rounded-2xl p-6 hover:scale-105 transition-transform">
+              <div class="text-center mb-4">
+                <i class="fas fa-music text-4xl text-violet-400 mb-3"></i>
+                <h3 class="text-xl font-bold text-violet-400">Musiqa</h3>
+              </div>
+              <ul class="space-y-2 text-sm text-gray-300">
+                <li><i class="fas fa-check text-green-400 mr-2"></i>Musiqa asboblarini o'rganing</li>
+                <li><i class="fas fa-check text-green-400 mr-2"></i>Turli janrlarni tinglang</li>
+                <li><i class="fas fa-check text-green-400 mr-2"></i>Qo'shiq aytishni mashq qiling</li>
+                <li><i class="fas fa-check text-green-400 mr-2"></i>Konsertlarga boring</li>
+              </ul>
+            </div>
+
+            <div class="glass rounded-2xl p-6 hover:scale-105 transition-transform">
+              <div class="text-center mb-4">
+                <i class="fas fa-puzzle-piece text-4xl text-amber-400 mb-3"></i>
+                <h3 class="text-xl font-bold text-amber-400">O'yinlar</h3>
+              </div>
+              <ul class="space-y-2 text-sm text-gray-300">
+                <li><i class="fas fa-check text-green-400 mr-2"></i>Zamonaviy va an'anaviy o'yinlar</li>
+                <li><i class="fas fa-check text-green-400 mr-2"></i>Strategiya o'yinlarini o'rganing</li>
+                <li><i class="fas fa-check text-green-400 mr-2"></i>Oilaviy o'yin kechalarini</li>
+                <li><i class="fas fa-check text-green-400 mr-2"></i>Intellektual mashqlarni</li>
+              </ul>
+            </div>
+
+            <div class="glass rounded-2xl p-6 hover:scale-105 transition-transform">
+              <div class="text-center mb-4">
+                <i class="fas fa-handshake text-4xl text-rose-400 mb-3"></i>
+                <h3 class="text-xl font-bold text-rose-400">Hamkorlik</h3>
+              </div>
+              <ul class="space-y-2 text-sm text-gray-300">
+                <li><i class="fas fa-check text-green-400 mr-2"></i>Jamoa ishini o'rganing</li>
+                <li><i class="fas fa-check text-green-400 mr-2"></i>Muloqot qobiliyatlarini</li>
+                <li><i class="fas fa-check text-green-400 mr-2"></i>Liderlik xususiyatlarini</li>
+                <li><i class="fas fa-check text-green-400 mr-2"></i>Konfliktlarni hal qilishni</li>
               </ul>
             </div>
           </div>
