@@ -34,32 +34,6 @@
         </div>
       </div>
 
-      <!-- Token Examples -->
-      <div class="mb-6">
-        <p class="text-sm font-medium mb-3">Test Token Kodlari:</p>
-        <div class="grid grid-cols-2 gap-2">
-          <button v-if="plan === 'pro'" 
-                  @click="tokenCode = 'pro123'" 
-                  class="text-xs bg-gray-700 hover:bg-gray-600 px-3 py-2 rounded text-left">
-            pro123
-          </button>
-          <button v-if="plan === 'pro'" 
-                  @click="tokenCode = 'pro456'" 
-                  class="text-xs bg-gray-700 hover:bg-gray-600 px-3 py-2 rounded text-left">
-            pro456
-          </button>
-          <button v-if="plan === 'advanced'" 
-                  @click="tokenCode = 'adv123'" 
-                  class="text-xs bg-gray-700 hover:bg-gray-600 px-3 py-2 rounded text-left">
-            adv123
-          </button>
-          <button v-if="plan === 'advanced'" 
-                  @click="tokenCode = 'adv456'" 
-                  class="text-xs bg-gray-700 hover:bg-gray-600 px-3 py-2 rounded text-left">
-            adv456
-          </button>
-        </div>
-      </div>
 
       <div class="flex gap-3 mb-4">
         <button @click="verifyToken" 

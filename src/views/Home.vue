@@ -60,12 +60,12 @@
                  class="glass rounded-2xl p-6 cursor-pointer hover:scale-105 transition-all">
               <h3 class="text-xl font-bold mb-4 text-green-400">BEPUL</h3>
               <ul class="space-y-2 text-sm text-gray-300">
-                <li><i class="fas fa-check text-green-400 mr-2"></i>Kuniga 2 ta savol</li>
-                <li><i class="fas fa-check text-green-400 mr-2"></i>Asosiy maslahatlar</li>
-                <li><i class="fas fa-check text-green-400 mr-2"></i>24/7 yordam</li>
+                <li><i class="fas fa-times text-red-400 mr-2"></i>AI maslahatchi yo'q</li>
+                <li><i class="fas fa-check text-green-400 mr-2"></i>Sayt ko'rish</li>
+                <li><i class="fas fa-check text-green-400 mr-2"></i>Rejimlar haqida ma'lumot</li>
               </ul>
               <div class="mt-4">
-                <span class="text-xs text-green-400">Hozir ishlaydi</span>
+                <span class="text-xs text-red-400">AI ishlamaydi</span>
               </div>
             </div>
             
@@ -92,6 +92,107 @@
               </ul>
               <div v-if="currentPlan !== 'advanced' || !isAuthenticated" class="mt-4">
                 <span class="text-xs text-gray-400">Token kiritish kerak</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Default Advice for Free Plan -->
+        <div v-if="currentPlan === 'free'" class="max-w-4xl mx-auto mb-16">
+          <h2 class="text-3xl font-bold text-center mb-8">Foydali Maslahatlar</h2>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="glass rounded-2xl p-6 hover:scale-105 transition-transform">
+              <div class="text-center mb-4">
+                <i class="fas fa-lightbulb text-4xl text-yellow-400 mb-3"></i>
+                <h3 class="text-xl font-bold text-yellow-400">Ishda Muvaffaqiyat</h3>
+              </div>
+              <ul class="space-y-2 text-sm text-gray-300">
+                <li><i class="fas fa-check text-green-400 mr-2"></i>Maqsadlaringizni aniq belgilang</li>
+                <li><i class="fas fa-check text-green-400 mr-2"></i>Vaqtingizni to'g'ri boshqaring</li>
+                <li><i class="fas fa-check text-green-400 mr-2"></i>Doimiy o'rganish jarayonini davom eting</li>
+                <li><i class="fas fa-check text-green-400 mr-2"></i>Jamoa bilan yaxshi hamkorlik qiling</li>
+              </ul>
+            </div>
+
+            <div class="glass rounded-2xl p-6 hover:scale-105 transition-transform">
+              <div class="text-center mb-4">
+                <i class="fas fa-heart text-4xl text-red-400 mb-3"></i>
+                <h3 class="text-xl font-bold text-red-400">Sog'liq</h3>
+              </div>
+              <ul class="space-y-2 text-sm text-gray-300">
+                <li><i class="fas fa-check text-green-400 mr-2"></i>Muntazam jismoniy mashqlar</li>
+                <li><i class="fas fa-check text-green-400 mr-2"></i>To'g'ri ovqatlanish</li>
+                <li><i class="fas fa-check text-green-400 mr-2"></i>Yetarli uxlash</li>
+                <li><i class="fas fa-check text-green-400 mr-2"></i>Stress bilan kurashish</li>
+              </ul>
+            </div>
+
+            <div class="glass rounded-2xl p-6 hover:scale-105 transition-transform">
+              <div class="text-center mb-4">
+                <i class="fas fa-graduation-cap text-4xl text-blue-400 mb-3"></i>
+                <h3 class="text-xl font-bold text-blue-400">Ta'lim</h3>
+              </div>
+              <ul class="space-y-2 text-sm text-gray-300">
+                <li><i class="fas fa-check text-green-400 mr-2"></i>Kunlik o'qish odatini shakllantiring</li>
+                <li><i class="fas fa-check text-green-400 mr-2"></i>Amaliy bilimlarni qo'llang</li>
+                <li><i class="fas fa-check text-green-400 mr-2"></i>Turli manbalardan o'rganing</li>
+                <li><i class="fas fa-check text-green-400 mr-2"></i>Bilimlaringizni boshqalar bilan baham ko'ring</li>
+              </ul>
+            </div>
+
+            <div class="glass rounded-2xl p-6 hover:scale-105 transition-transform">
+              <div class="text-center mb-4">
+                <i class="fas fa-users text-4xl text-green-400 mb-3"></i>
+                <h3 class="text-xl font-bold text-green-400">Ijtimoiy Hayot</h3>
+              </div>
+              <ul class="space-y-2 text-sm text-gray-300">
+                <li><i class="fas fa-check text-green-400 mr-2"></i>Oilangizga vaqt ajrating</li>
+                <li><i class="fas fa-check text-green-400 mr-2"></i>Do'stlar bilan aloqani saqlang</li>
+                <li><i class="fas fa-check text-green-400 mr-2"></i>Yangi odamlar bilan tanishing</li>
+                <li><i class="fas fa-check text-green-400 mr-2"></i>Ijtimoiy faoliyatda qatnashing</li>
+              </ul>
+            </div>
+
+            <div class="glass rounded-2xl p-6 hover:scale-105 transition-transform">
+              <div class="text-center mb-4">
+                <i class="fas fa-coins text-4xl text-yellow-500 mb-3"></i>
+                <h3 class="text-xl font-bold text-yellow-500">Moliyaviy Maslahat</h3>
+              </div>
+              <ul class="space-y-2 text-sm text-gray-300">
+                <li><i class="fas fa-check text-green-400 mr-2"></i>Har oy jamg'arma qiling</li>
+                <li><i class="fas fa-check text-green-400 mr-2"></i>Moliyaviy reja tuzing</li>
+                <li><i class="fas fa-check text-green-400 mr-2"></i>Keraksiz xarajatlarni kamaytiring</li>
+                <li><i class="fas fa-check text-green-400 mr-2"></i>Investitsiya haqida o'rganing</li>
+              </ul>
+            </div>
+
+            <div class="glass rounded-2xl p-6 hover:scale-105 transition-transform">
+              <div class="text-center mb-4">
+                <i class="fas fa-rocket text-4xl text-purple-400 mb-3"></i>
+                <h3 class="text-xl font-bold text-purple-400">Rivojlanish</h3>
+              </div>
+              <ul class="space-y-2 text-sm text-gray-300">
+                <li><i class="fas fa-check text-green-400 mr-2"></i>Shaxsiy rivojlanish rejasi</li>
+                <li><i class="fas fa-check text-green-400 mr-2"></i>Yangiliklarga ochiq bo'ling</li>
+                <li><i class="fas fa-check text-green-400 mr-2"></i>Xatolardan o'rganing</li>
+                <li><i class="fas fa-check text-green-400 mr-2"></i>Professional yordam so'rang</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="text-center mt-8">
+            <div class="glass rounded-2xl p-6 inline-block">
+              <h3 class="text-xl font-bold mb-4 text-primary">Shaxsiy AI Maslahatchi Kerakmi?</h3>
+              <p class="text-gray-300 mb-4">
+                PRO yoki ADVANCED rejimni tanlang va shaxsiy maslahatlar oling!
+              </p>
+              <div class="flex flex-col sm:flex-row gap-3 justify-center">
+                <button @click="selectPlan('pro')" class="bg-gradient-to-r from-yellow-500 to-yellow-600 px-6 py-3 rounded-lg font-semibold hover:scale-105 transition-transform">
+                  <i class="fas fa-star mr-2"></i>PRO Rejim
+                </button>
+                <button @click="selectPlan('advanced')" class="bg-gradient-to-r from-purple-500 to-purple-600 px-6 py-3 rounded-lg font-semibold hover:scale-105 transition-transform">
+                  <i class="fas fa-crown mr-2"></i>ADVANCED Rejim
+                </button>
               </div>
             </div>
           </div>
@@ -192,8 +293,12 @@ export default {
       return Math.max(0, this.usageLimit - this.dailyUsage);
     },
     canSendMessage() {
-      if (this.currentPlan === 'advanced') return true;
-      return this.dailyUsage < this.usageLimit;
+      // Bepul versiyada AI ishlamaydi
+      if (this.currentPlan === 'free') return false;
+      
+      if (this.currentPlan === 'advanced' && this.isAuthenticated) return true;
+      if (this.currentPlan === 'pro' && this.isAuthenticated) return this.dailyUsage < this.usageLimit;
+      return false;
     }
   },
   mounted() {
@@ -230,14 +335,14 @@ export default {
       console.log('isAuthenticated:', this.isAuthenticated);
       
       if (this.currentPlan === 'free') {
-        console.log('Starting FREE chat...');
-        // Bot xabarini to'g'ridan-to'g'ri qo'shamiz, recursive chaqiruv emas
+        console.log('FREE plan - AI not available');
+        // Bepul versiyada AI ishlamaydi, faqat reklama xabari
         this.messages.push({ 
-          text: "Salom! Maslahatchi AI ga xush kelibsiz. Sizga qanday yordam bera olaman?", 
+          text: "😔 Bepul versiyada AI maslahatchi mavjud emas. Professional maslahatlar uchun PRO yoki ADVANCED rejimni tanlang!", 
           sender: 'bot', 
           timestamp: new Date() 
         });
-        console.log('FREE chat message added to messages array');
+        console.log('FREE plan message added - AI disabled');
         
         // Chat qismiga scroll qilish
         this.$nextTick(() => {
@@ -268,9 +373,18 @@ export default {
     },
     async sendMessage(text, sender = 'user') {
       if (sender === 'user') {
+        // Bepul versiyada AI ishlamaydi
+        if (this.currentPlan === 'free') {
+          this.messages.push({ 
+            text: "😔 Bepul versiyada AI maslahatchi mavjud emas. Professional maslahatlar uchun PRO yoki ADVANCED rejimni tanlang!", 
+            sender: 'bot', 
+            timestamp: new Date() 
+          });
+          return;
+        }
+        
         if (!this.canSendMessage) {
           alert(`Sizning kunlik limit (${
-            this.currentPlan === 'free' ? '2 ta' : 
             this.currentPlan === 'pro' ? '50 ta' : 'Cheksiz'
           }) tugadi. Keyingi kunda qayta urinib ko'ring yoki rejimni yangilang.`);
           return;
@@ -288,7 +402,7 @@ export default {
         
         try {
           let response;
-          // Barcha rejimlarda haqiqiy Gemini AI ishlatamiz
+          // Faqat PRO va ADVANCED rejimlarda Gemini AI ishlatamiz
           console.log('Using Gemini API for response...');
           response = await this.getGeminiResponse(text);
           
