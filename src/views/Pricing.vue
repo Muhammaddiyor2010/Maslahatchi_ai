@@ -17,8 +17,10 @@
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 max-w-6xl mx-auto px-4">
         <div v-for="(plan, index) in plans" :key="plan.name" 
-             :class="plan.popular ? 'ring-2 ring-primary transform scale-105' : ''"
-             :class="'glass rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 hover:scale-105 transition-all duration-300 relative animate-slide-in-up animate-delay-' + ((index + 1) * 200)">
+             :class="[
+               plan.popular ? 'ring-2 ring-primary transform scale-105' : '',
+               'glass rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 hover:scale-105 transition-all duration-300 relative animate-slide-in-up animate-delay-' + ((index + 1) * 200)
+             ]">
           
           <div v-if="plan.popular" class="absolute -top-3 sm:-top-4 left-1/2 transform -translate-x-1/2">
             <span class="bg-primary px-3 sm:px-4 py-1 rounded-full text-xs sm:text-sm font-semibold">MASHHUR</span>
