@@ -2,9 +2,10 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import Features from '../views/Features.vue'
 import Pricing from '../views/Pricing.vue'
-import Contact from '../views/Contact.vue'
 import About from '../views/About.vue'
 import Advice from '../views/Advice.vue'
+import Help from '../views/Help.vue'
+import Chat from '../views/Chat.vue'
 
 const routes = [
   {
@@ -23,6 +24,11 @@ const routes = [
     component: Advice
   },
   {
+    path: '/chat',
+    name: 'Chat',
+    component: Chat
+  },
+  {
     path: '/pricing',
     name: 'Pricing',
     component: Pricing
@@ -34,8 +40,12 @@ const routes = [
   },
   {
     path: '/contact',
-    name: 'Contact',
-    component: Contact
+    redirect: '/about'
+  },
+  {
+    path: '/help',
+    name: 'Help',
+    component: Help
   },
   {
     path: '/:pathMatch(.*)*',

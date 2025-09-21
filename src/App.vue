@@ -8,22 +8,31 @@
     
     <!-- Footer -->
     <Footer />
+    
+    <!-- Welcome Modal -->
+    <WelcomeModal 
+      :show="showWelcomeModal" 
+      @close="closeWelcomeModal" 
+    />
   </div>
 </template>
 
 <script>
 import Navigation from './components/Navigation.vue'
 import Footer from './components/Footer.vue'
+import WelcomeModal from './components/WelcomeModal.vue'
 
 export default {
   name: 'App',
   components: {
     Navigation,
-    Footer
+    Footer,
+    WelcomeModal
   },
   data() {
     return {
-      isDark: true
+      isDark: true,
+      showWelcomeModal: false
     }
   },
   computed: {
@@ -38,6 +47,21 @@ export default {
       this.isDark = !this.isDark
       localStorage.setItem('theme', this.isDark ? 'dark' : 'light')
       document.documentElement.classList.toggle('dark', this.isDark)
+    },
+    
+    closeWelcomeModal() {
+      this.showWelcomeModal = false
+    },
+    
+    checkWelcomeModal() {
+      // Check if user has seen the welcome modal before
+      const hasSeenWelcome = localStorage.getItem('welcomeModalSeen')
+      if (!hasSeenWelcome) {
+        // Show modal after a short delay to let the page load
+        setTimeout(() => {
+          this.showWelcomeModal = true
+        }, 1000)
+      }
     }
   },
   mounted() {
@@ -50,6 +74,9 @@ export default {
       this.isDark = window.matchMedia('(prefers-color-scheme: dark)').matches
     }
     document.documentElement.classList.toggle('dark', this.isDark)
+    
+    // Check if welcome modal should be shown
+    this.checkWelcomeModal()
   }
 }
 </script>
@@ -193,5 +220,188 @@ body {
 
 .theme-toggle:hover {
   transform: scale(1.1);
+}
+
+/* Slide animations */
+.animate-slide-in-left {
+  animation: slideInLeft 0.8s ease-out;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.8s ease-out;
+}
+
+.animate-slide-in-up {
+  animation: slideInUp 0.8s ease-out;
+}
+
+.animate-slide-in-down {
+  animation: slideInDown 0.8s ease-out;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.animate-fade-in-down {
+  animation: fadeInDown 0.8s ease-out;
+}
+
+.animate-fade-in-left {
+  animation: fadeInLeft 0.8s ease-out;
+}
+
+.animate-fade-in-right {
+  animation: fadeInRight 0.8s ease-out;
+}
+
+/* Keyframes */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Staggered animations */
+.animate-delay-100 {
+  animation-delay: 0.1s;
+}
+
+.animate-delay-200 {
+  animation-delay: 0.2s;
+}
+
+.animate-delay-300 {
+  animation-delay: 0.3s;
+}
+
+.animate-delay-400 {
+  animation-delay: 0.4s;
+}
+
+.animate-delay-500 {
+  animation-delay: 0.5s;
+}
+
+.animate-delay-600 {
+  animation-delay: 0.6s;
+}
+
+.animate-delay-700 {
+  animation-delay: 0.7s;
+}
+
+.animate-delay-800 {
+  animation-delay: 0.8s;
+}
+
+.animate-delay-900 {
+  animation-delay: 0.9s;
+}
+
+.animate-delay-1000 {
+  animation-delay: 1.0s;
+}
+
+.animate-delay-1100 {
+  animation-delay: 1.1s;
+}
+
+.animate-delay-1200 {
+  animation-delay: 1.2s;
+}
+
+.animate-delay-1300 {
+  animation-delay: 1.3s;
+}
+
+.animate-delay-1400 {
+  animation-delay: 1.4s;
+}
+
+.animate-delay-1500 {
+  animation-delay: 1.5s;
 }
 </style>

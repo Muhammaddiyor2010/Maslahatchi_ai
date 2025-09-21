@@ -21,10 +21,10 @@
         <div>
           <h3 class="font-semibold mb-4">Kompaniya</h3>
           <ul class="space-y-2 text-gray-300">
-            <li>Biz haqimizda</li>
-            <li>Jamoa</li>
-            <li>Yangiliklar</li>
-            <li>Karyera</li>
+            <li><router-link to="/about" class="hover:text-primary transition-colors">Biz haqimizda</router-link></li>
+            <li><router-link to="/help" class="hover:text-primary transition-colors">Yordam</router-link></li>
+            <li><router-link to="/pricing" class="hover:text-primary transition-colors">Narxlar</router-link></li>
+            <li><router-link to="/features" class="hover:text-primary transition-colors">Xususiyatlar</router-link></li>
           </ul>
         </div>
         <div>
